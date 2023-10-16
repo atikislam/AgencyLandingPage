@@ -11,9 +11,10 @@ const Header = () => {
     const toggleMenu = ()=>{
         setMenuOpen(!isMenuOpen);
     }
+    // Header BG color changed once scrolled
     useEffect(() => {
         const handleScroll = () =>{
-            if(Window.scrollY > 100){
+            if(window.scrollY > 100){
                 setSticky(true);
             }else setSticky(false);
         };
@@ -33,8 +34,8 @@ const Header = () => {
     ]
     return (
         <div>
-            <header className=' w-full bg-white md:bg-transparent fixed top-0 left-0 right-0'>
-                <nav className={` py-4 lg:px-14 px-4 ${isSticky ? "sticky top-0 left-0 right-0 border-b bg-white duration-300" : ""}`}>
+            <header className=" w-full bg-white md:bg-transparent fixed top-0 left-0 right-0">
+                <nav className={` py-4 lg:px-14 px-4 ${isSticky ? "sticky top-0 left-0 right-0 border bg-white duration-300" : ""}`}>
                     {/* Nav Item for lg device */ }
                     <div className="flex justify-between items-center text-base gap-8">
                         <a className='text-2xl font-semibold flex items-center space-x-3' href="#">Logo</a>
@@ -46,7 +47,7 @@ const Header = () => {
                         {/*btn for large Devices */}
                         <div className="space-x-12 hidden lg:flex items-center">
                             <a href="#" className="hidden lg:flex items-center">Login</a>
-                            <button className="bg-brandPrimary text-white py-2 px-4 transition-all duration-300 rounded hover:bg-neutralDGrey ">Sign Up</button>
+                            <button className="btn-primary">Sign Up</button>
                         </div>
 
                     {/*    Mobile Menu     */}
